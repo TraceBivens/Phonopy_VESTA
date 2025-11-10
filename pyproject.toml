@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "phonopy-vesta"
+version = "0.1.0"
+description = "Export Eigenvectors from Phonopy format to VESTA for visualization"
+readme = "README.md"
+license = "GPL-3.0-only"
+requires-python = ">=3.6"
+authors = [
+    {name = "Original Author", email = "author@example.com"},
+]
+maintainers = [
+    {name = "Maintainer", email = "maintainer@example.com"},
+]
+keywords = ["phonopy", "vesta", "phonon", "visualization"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "numpy",
+]
+
+[project.urls]
+Homepage = "https://github.com/user/Phonopy_VESTA"
+Repository = "https://github.com/user/Phonopy_VESTA"
+Issues = "https://github.com/user/Phonopy_VESTA/issues"
+
+[project.scripts]
+phonopy-vesta = "phonopy_vesta.cli:main"
+
+[tool.pixi.workspace]
+name = "phonopy-vesta"
+version = "0.1.0"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+preview = ["pixi-build"]
+
+[tool.pixi.package]
+name = "phonopy-vesta"
+version = "0.1.0"
+build = { backend = { name = "pixi-build-python", version = "0.4.*", channels = ["https://prefix.dev/pixi-build-backends", "https://prefix.dev/conda-forge"] } }
+host-dependencies = { hatchling = "*" }
+run-dependencies = { numpy = "*" }

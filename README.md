@@ -1,7 +1,21 @@
 # Phonopy_VESTA
 ### Export Eigenvectors from Phonopy format to VESTA
 
-This Code can Extract the Eigenvectors of Phonon Dispersion from Phonopy and plot it in VESTA Files for visualisation.
+This package can extract the eigenvectors of phonon dispersion from Phonopy and create VESTA files for visualization.
+
+## Installation
+
+Install with pixi:
+
+```bash
+pixi global install git+https://github.com/yourusername/Phonopy_VESTA.git
+```
+
+Then use:
+
+```bash
+phonopy-vesta [band.yaml] [POSCAR.vesta]
+```
 
 <img src="pics/modes.png" width=400 align="middle">
 
